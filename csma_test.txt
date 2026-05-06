@@ -1,0 +1,161 @@
+JUnit String Test
+
+import static org.junit.Assert.*;
+import org.junit.Test;
+
+public class SampleTest {
+
+    @Test
+    public void testString() {
+        String str = "check the string";
+        assertEquals("check the string", str);
+    }
+}
+
+
+Message Passing Program
+Main Class
+public class MsgUnit {
+    private String message;
+
+    public MsgUnit(String message) {
+        this.message = message;
+    }
+
+    public String printMessage() {
+        System.out.println(message);
+        return message;
+    }
+}  
+ Test Class
+
+import static org.junit.Assert.*;
+import org.junit.Test;
+
+public class MsgUnitTest {
+
+    @Test
+    public void testMessage() {
+        MsgUnit obj = new MsgUnit("Hello");
+        assertEquals("Hello", obj.printMessage());
+    }
+}  
+
+Calculator Program
+
+Main class
+public class Calculator {
+
+    public int add(int a, int b) {
+        return a + b;
+    }
+
+    public int subtract(int a, int b) {
+        return a - b;
+    }
+
+    public int multiply(int a, int b) {
+        return a * b;
+    }
+
+    public int divide(int a, int b) {
+        if (b == 0) {
+            throw new IllegalArgumentException("Division by zero not allowed");
+        }
+        return a / b;
+    }
+} 
+Test Class
+
+import static org.junit.Assert.*;
+import org.junit.Test;
+
+public class CalculatorTest {
+
+    @Test
+    public void testAddition() {
+        Calculator c = new Calculator();
+        assertEquals(5, c.add(2, 3));
+    }
+
+    @Test
+    public void testSubtraction() {
+        Calculator c = new Calculator();
+        assertEquals(1, c.subtract(3, 2));
+    }
+
+    @Test
+    public void testMultiplication() {
+        Calculator c = new Calculator();
+        assertEquals(6, c.multiply(2, 3));
+    }
+
+    @Test
+    public void testDivision() {
+        Calculator c = new Calculator();
+        assertEquals(2, c.divide(6, 3));
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testDivisionByZero() {
+        Calculator c = new Calculator();
+        c.divide(6, 0);
+    }
+} 
+
+Sum Example
+Main class
+public class Calculation {
+    public int sum(int a, int b) {
+        return a + b;
+    }
+}
+Test class
+import static org.junit.Assert.*;
+import org.junit.Test;
+
+public class CalculationTest {
+
+    @Test
+    public void testSum() {
+        Calculation c = new Calculation();
+        int result = c.sum(10, 5);
+        assertEquals(15, result);
+    }
+}
+
+
+Even Number Program  
+Main Class
+public class EvenNumber {
+
+    public boolean isEven(int num) {
+        return num % 2 == 0;
+    }
+}
+
+Test Class
+import static org.junit.Assert.*;
+import org.junit.Test;
+
+public class EvenNumberTest {
+
+    @Test
+    public void testEven() {
+        EvenNumber obj = new EvenNumber();
+        assertTrue(obj.isEven(2));
+    }
+
+    @Test
+    public void testOdd() {
+        EvenNumber obj = new EvenNumber();
+        assertFalse(obj.isEven(3));
+    }
+}
+
+
+
+  
+
+
+
